@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .main-div
+  {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   margin-bottom: 50px;
+  }
+.inner-div
+{
+  text-align: center;
+}
+
+.btn
+{
+  border: none;
+  background-color: gainsboro;
+  margin: 5px;
+}
