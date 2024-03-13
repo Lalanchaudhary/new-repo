@@ -1,46 +1,44 @@
-import React from 'react'
-
-function Navbar() {
+import React from 'react';
+import '../css/Navbar.css'
+import Mens from '../Views/Mens';
+import { Navbar, Nav, Form, FormControl, Container,Image, } from 'react-bootstrap';
+function CustomNavbar() {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div className="container-fluid">
-    <a className="navbar-brand ms-4" href="/"><h2>Apna Showroom</h2></a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/">Link</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="/">Action</a></li>
-            <li><a className="dropdown-item" href="/">Another action</a></li>
-            <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="/">Something else here</a></li>
-          </ul>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" href='/'>Disabled</a>
-        </li>
-      </ul>
-      <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-    </div>
-  )
+    <>
+<Navbar bg="light" expand="lg" className='navbar1'>
+  <Container>
+  <Navbar.Brand href="#home"  className='mr-4 mb-2'><Image src='https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg' height={20}/></Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto ml-4">
+      <Nav.Link href='#home' className='text-dark'>Men</Nav.Link>
+      <Nav.Link href="#link"  className='text-dark'>Women</Nav.Link>
+      <Nav.Link href="#link" className='text-dark'>Mobile Cover</Nav.Link>
+    </Nav>
+  </Navbar.Collapse>
+  <Form className='d-flex align-items-center'>
+   <FormControl  type='text' className='p-2 pl-4'  placeholder='Search' inline></FormControl>
+   <div className='icons'>
+   <Nav.Link className='icons2'  href='#login'>Login</Nav.Link>
+   </div>
+  </Form>
+  </Container>
+</Navbar>
+
+<Container className='pb-4 pt-2' fluid>
+  <Container className='d-flex justify-content-between'>
+      <Nav.Link href={Mens.js}  className='text-dark fs'>MEN</Nav.Link>
+      <Nav.Link href="#link"  className='text-dark fs'>WOMEN</Nav.Link>
+      <Nav.Link href="#link" className='text-dark fs'>ACCESSORIES</Nav.Link>
+      <Nav.Link href="#home" className='text-dark fs'>SHOP NOW</Nav.Link>
+      <Nav.Link href="#link"  className='text-dark fs'>HEAVY DUTY</Nav.Link>
+      <Nav.Link href="#link" className='text-dark fs'>BEWAKOOF AIR</Nav.Link>
+      <Nav.Link href="#home" className='text-dark fs'>OFFICIAL MERCH</Nav.Link>
+      <Nav.Link href="#link"  className='text-dark fs'>PLUS SIZE</Nav.Link>
+  </Container>
+</Container>
+</>
+  );
 }
 
-export default Navbar
+export default CustomNavbar;

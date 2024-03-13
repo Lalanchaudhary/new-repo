@@ -3,6 +3,9 @@ import './App.css'
 import Navbar from './Component/Navbar'
 import Output from './Component/Output'
 import Input from './Component/Input'
+import Crousel from './Component/Crousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HeroSec from './Component/HeroSec'
 function App() {
   let [data1, setData1] = useState(
     [{
@@ -87,7 +90,6 @@ function App() {
   // }
 
   const UpdateData = (row) => {
-    console.log(row.number)
     const updatedItems = data1.map((item) => {
       if (item.number == row.number) {
         return { ...item, name:row.name,product:row.product,image:row.image }; // Update the name of the item with the matching number
@@ -97,30 +99,32 @@ function App() {
   
     setData1(updatedItems);
   };
-  
-
-
   return (
     <>
       <Navbar />
+      <HeroSec/>
+      {/* <Crousel />  */}
+
       <h2 className='heading'>Bikes</h2>
-      <div className='main-div'>
+  
+      <div className='main-div' >
         {
           data1.map((e) => {
             return <Output key={e.number} data={e} action={Remove} />
           })
         }
       </div>
+
       <h2 className='heading'>Cars</h2>
       <div className='main-div'>
         {
           data2.map((e) => {
-            return <Output data={e} key={e.number} action={Remove} />
+            return <Output data={e} key={e.number} action={Remove}/>
           })
         }
       </div>
       <Input action={AddData} action2={UpdateData} />
-    
+
     </>
   )
 }
